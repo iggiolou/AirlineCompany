@@ -1,5 +1,7 @@
 package by.vdoroshenko;
 
+import by.vdoroshenko.entity.Aircraft;
+import by.vdoroshenko.entity.AirlineCompany;
 import by.vdoroshenko.utility.ConsoleReader;
 import by.vdoroshenko.utility.Parser;
 import org.xml.sax.SAXException;
@@ -7,10 +9,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -21,6 +22,8 @@ public class Main {
 
     public void runTheApp() {
 
+        List<Aircraft> aircrafts = new ArrayList<>();
+
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setValidating(true);
         factory.setNamespaceAware(false);
@@ -29,7 +32,7 @@ public class Main {
         InputStream xmlData = null;
         try
         {
-            xmlData = new FileInputStream("AircraftList.xml");
+            xmlData = new FileInputStream(new File("AircraftList.xml"));
 
             parser = factory.newSAXParser();
             parser.parse(xmlData, new Parser());
@@ -49,7 +52,14 @@ public class Main {
             e.printStackTrace();
         }
 
-
+            switch (showMenu()){
+                case 1:
+                    AirlineCompany.showAircraftList(aircrafts);
+                case 2:
+                case 3:
+                    System.out.println("See you later! Bye!");
+                    System.exit(0);
+            }
 
     }
 

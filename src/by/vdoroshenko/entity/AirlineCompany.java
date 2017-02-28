@@ -8,15 +8,22 @@ import java.util.List;
  */
 public class AirlineCompany {
 
- private List<Aircraft> aircraftList;
+    private List<Aircraft> aircraftList;
 
     public AirlineCompany() {
         aircraftList = new ArrayList<>();
     }
 
-    public void addAircraft(Aircraft aircraft){
-     aircraftList.add(aircraft);
+    public void addAircraft(Aircraft aircraft) {
+        aircraftList.add(aircraft);
 
- }
+    }
+
+    public static void showAircraftList(List<Aircraft> aircrafts){
+        for (Aircraft aircraft: aircrafts) {
+            System.out.println(aircraft);
+        }
+
+    }
 
 }

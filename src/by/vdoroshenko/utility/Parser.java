@@ -46,22 +46,29 @@ public class Parser extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         System.out.println("Tag: " + qName);
-        switch (qName) {
-            case "CargoAirplane":
-                aircraftBuilder = new CargoAircraftBuilder();
-                break;
-            case "CivilAirplane":
-                aircraftBuilder = new CivilAircraftBuilder();
-                break;
-            case "MilitaryAirplane":
-                aircraftBuilder = new MilitaryAircraftBuilder();
-                break;
-            default:
-                throw new IllegalArgumentException("Tag " + qName +  " not found");
-        }
-        aircraftBuilder.setId(Integer.parseInt(attributes.getValue("id")));
-        currentTag = qName;
-        super.startElement(uri, localName, qName, attributes);
+        
+            switch (qName) {
+                case "CargoAirplane":
+                    aircraftBuilder = new CargoAircraftBuilder();
+                    break;
+                case "CivilAirplane":
+                    aircraftBuilder = new CivilAircraftBuilder();
+                    break;
+                case "MilitaryAirplane":
+                    aircraftBuilder = new MilitaryAircraftBuilder();
+                    break;
+                case "AirplaneInfo":
+                    break;
+                default:
+                    System.out.println("Tag " + qName + " not found");
+            }
+            System.out.println(attributes.getValue(qName));
+             if (attributes.getValue("id") != null) {
+                 aircraftBuilder.setId(Integer.parseInt(attributes.getValue("id")));
+             }
+            currentTag = qName;
+            super.startElement(uri, localName, qName, attributes);
+
     }
 
     @Override
@@ -75,22 +82,31 @@ public class Parser extends DefaultHandler {
         switch (currentTag) {
             case AIRPLANE_NAME:
                 aircraftBuilder.setName(tagValue);
+                break;
             case AIRPLANE_TYPE:
                 aircraftBuilder.setType(AircraftType.defineValue(tagValue));
+                break;
             case PASSANGER_AMOUNT:
                 ((CivilAircraftBuilder)aircraftBuilder).setAircraftPassengerAmount(Integer.parseInt(tagValue));
+                break;
             case CAPACITY:
                 ((CargoAircraftBuilder)aircraftBuilder).setAircraftCapacity(tagValue);
+                break;
             case RANGE:
                 ((CivilAircraftBuilder)aircraftBuilder).setAircraftRange(tagValue);
+                break;
             case MAX_SPEED:
                 aircraftBuilder.setMaxSpeed(tagValue);
+                break;
             case LENGTH:
                 ((CargoAircraftBuilder)aircraftBuilder).setAircraftLength(tagValue);
+                break;
             case MILITARY_TYPE:
                 ((MilitaryAircraftBuilder)aircraftBuilder).setAircraftMilitaryType(tagValue);
+                break;
             case GUN_TYPE:
                 ((MilitaryAircraftBuilder)aircraftBuilder).setAircraftGunType(tagValue);
+                break;
         }
 
         super.characters(ch, start, length);

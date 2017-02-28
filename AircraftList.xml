@@ -1,112 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AirplaneInfo>
-
-	<Airplane id = "1">
+	<CargoAirplane id = "1">
 		<AirplaneName>Boeing 747</AirplaneName>
-		<AirplaneType>Widebody Aircraft</AirplaneType>
-		<PassangerAmount>500</PassangerAmount>
-		<Capacity>412,8 t</Capacity>
-		<Range>14205 km</Range>
+		<AirplaneType>Cargo Airplane</AirplaneType>
 		<MaxSpeed>988 km/h</MaxSpeed>
-	</Airplane>
+		<Capacity>412,8 t</Capacity>
+		<Length>70 m</Length>	
+	</CargoAirplane>
 
-	<Airplane id = "2">
+	<CivilAirplane id = "2">
 		<AirplaneName>Airbus A380</AirplaneName>
-		<AirplaneType>Widebody Aircraft</AirplaneType>
-		<PassangerAmount>525</PassangerAmount>
-		<Capacity>560 t</Capacity>
-		<Range>15200 km</Range>
+		<AirplaneType>Civil Aircraft</AirplaneType>
 		<MaxSpeed>1020 km/h</MaxSpeed>
-	</Airplane>
+		<PassangerAmount>525</PassangerAmount>
+		<Range>15200 km</Range>
+	</CivilAirplane>
 
-	<Airplane id = "3">
+	<MilitaryAirplane id = "3">
 		<AirplaneName>Boeing 777</AirplaneName>
 		<AirplaneType>Widebody Aircraft</AirplaneType>
-		<PassangerAmount>365</PassangerAmount>
-		<Capacity>315 t</Capacity>
-		<Range>14685 km</Range>
+		<MilitaryType>315 t</MilitaryType>
+		<GunType>14685 km</GunType>
 		<MaxSpeed>945 km/h</MaxSpeed>
-	</Airplane>
+	</MilitaryAirplane>
 
-	<Airplane id = "4">
-		<AirplaneName>Airbus A320</AirplaneName>
-		<AirplaneType>Narrowbody Aircraft</AirplaneType>
-		<PassangerAmount>220</PassangerAmount>
-		<Capacity>93 t</Capacity>
-		<Range>5950 km</Range>
-		<MaxSpeed>840 km/h</MaxSpeed>
-	</Airplane>
+	<CargoAirplane id = "4">
+		<AirplaneName>Boeing 747</AirplaneName>
+		<AirplaneType>Cargo Airplane</AirplaneType>
+		<MaxSpeed>988 km/h</MaxSpeed>
+		<Capacity>412,8 t</Capacity>
+		<Length>82 m</Length>	
+	</CargoAirplane>
 
-	<Airplane id = "5">
+	<CivilAirplane id = "5">
 		<AirplaneName>Boeing 737</AirplaneName>
-		<AirplaneType>Narrowbody Aircraft</AirplaneType>
+		<AirplaneType>Civil Aircraft</AirplaneType>
 		<PassangerAmount>148</PassangerAmount>
-		<Capacity>70 t</Capacity>
 		<Range>6230 km</Range>
 		<MaxSpeed>852 hm/h</MaxSpeed>
-	</Airplane>
+	</CivilAirplane>
 
-	<Airplane id = "6">
+	<MilitaryAirplane id = "6">
 		<AirplaneName>Boeing 757</AirplaneName>
 		<AirplaneType>Narrowbody Aircraft</AirplaneType>
-		<PassangerAmount>280</PassangerAmount>
-		<Capacity>123 t</Capacity>
-		<Range>6421 km</Range>
+		<MilitaryType>123 t</MilitaryType>
+		<GunType>6421 km</GunType>
 		<MaxSpeed>850 km/h</MaxSpeed>
-	</Airplane>
+	</MilitaryAirplane>
 
-	<Airplane id = "7">
-		<AirplaneName>Tupolev Tu164</AirplaneName>
-		<AirplaneType>Narrowbody Aircraft</AirplaneType>
-		<PassangerAmount>176</PassangerAmount>
-		<Capacity>104 t</Capacity>
-		<Range>3900 km</Range>
-		<MaxSpeed>950 km/h</MaxSpeed>
-	</Airplane>
+	<CargoAirplane id = "7">
+		<AirplaneName>Boeing 747</AirplaneName>
+		<AirplaneType>Cargo Airplane</AirplaneType>
+		<MaxSpeed>988 km/h</MaxSpeed>
+		<Capacity>412,8 t</Capacity>
+		<Length>500</Length>	
+	</CargoAirplane>
 
-	<Airplane id = "8">
+	<CivilAirplane id = "8">
 		<AirplaneName>Saab 340</AirplaneName>
-		<AirplaneType>Regional</AirplaneType>
+		<AirplaneType>Civil Aircraft</AirplaneType>
 		<PassangerAmount>37</PassangerAmount>
-		<Capacity>13 t</Capacity>
 		<Range>1735 km</Range>
 		<MaxSpeed>523 km/h</MaxSpeed>
-	</Airplane>
+	</CivilAirplane>
 
-	<Airplane id = "9">
+	<MilitaryAirplane id = "9">
 		<AirplaneName>Saab 2000</AirplaneName>
 		<AirplaneType>Regional</AirplaneType>
-		<PassangerAmount>50</PassangerAmount>
-		<Capacity>23 t</Capacity>
-		<Range>2035 km</Range>
+		<MilitaryType>23 t</MilitaryType>
+		<GunType>2035 km</GunType>
 		<MaxSpeed>685 km/h</MaxSpeed>
-	</Airplane>
+	</MilitaryAirplane>
 
-	<Airplane id = "10">
-		<AirplaneName>Yakovlev Yak40</AirplaneName>
-		<AirplaneType>Regional</AirplaneType>
-		<PassangerAmount>40</PassangerAmount>
-		<Capacity>17 t</Capacity>
-		<Range>2500 km</Range>
-		<MaxSpeed>546 km/h</MaxSpeed>
-	</Airplane>
+	<CargoAirplane id = "10">
+		<AirplaneName>Boeing 747</AirplaneName>
+		<AirplaneType>Cargo Airplane</AirplaneType>
+		<MaxSpeed>988 km/h</MaxSpeed>
+		<Capacity>412,8 t</Capacity>
+		<Length>500</Length>	
+	</CargoAirplane>
 
-	<Airplane id = "11">
+	<CivilAirplane id = "11">
 		<AirplaneName>Beechcraft King Air</AirplaneName>
-		<AirplaneType>Shorthoul	</AirplaneType>
+		<AirplaneType>Civil Aircraft</AirplaneType>
 		<PassangerAmount>6</PassangerAmount>
-		<Capacity>4 t</Capacity>
 		<Range>2446 km</Range>
 		<MaxSpeed>500 km/h</MaxSpeed>
-	</Airplane>
+	</CivilAirplane>
 
-	<Airplane id = "12">
+	<MilitaryAirplane id = "12">
 		<AirplaneName>Cessna Citation Mustang</AirplaneName>
 		<AirplaneType>Shorthoul</AirplaneType>
-		<PassangerAmount>5</PassangerAmount>
-		<Capacity>4 t</Capacity>
-		<Range>2161 km</Range>
+		<MilitaryType>4 t</MilitaryType>
+		<GunType>2161 km</GunType>
 		<MaxSpeed>630 km/h</MaxSpeed>
-	</Airplane>
+	</MilitaryAirplane>
 
 </AirplaneInfo>
