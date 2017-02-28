@@ -30,9 +30,19 @@ public class Parser extends DefaultHandler {
     public static final String GUN_TYPE = "GunType";
 
     private String currentTag;
+
+
     AirlineCompany airlineCompany = new AirlineCompany();
     List<Aircraft> aircraftList;
     private AircraftBuilder aircraftBuilder;
+
+    public AirlineCompany getAirlineCompany() {
+        return airlineCompany;
+    }
+
+    public void setAirlineCompany(AirlineCompany airlineCompany) {
+        this.airlineCompany = airlineCompany;
+    }
 
 
     @Override
@@ -45,8 +55,8 @@ public class Parser extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        System.out.println("Tag: " + qName);
-        
+        //System.out.println("Tag: " + qName);
+
             switch (qName) {
                 case "CargoAirplane":
                     aircraftBuilder = new CargoAircraftBuilder();
@@ -59,10 +69,8 @@ public class Parser extends DefaultHandler {
                     break;
                 case "AirplaneInfo":
                     break;
-                default:
-                    System.out.println("Tag " + qName + " not found");
             }
-            System.out.println(attributes.getValue(qName));
+            //System.out.println(attributes.getValue(qName));
              if (attributes.getValue("id") != null) {
                  aircraftBuilder.setId(Integer.parseInt(attributes.getValue("id")));
              }
@@ -74,10 +82,10 @@ public class Parser extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         super.characters(ch, start, length);
-        for (int i = start; i < start + length; ++i) {
-            System.out.print(ch[i]);
-        }
-        String tagValue = new String(ch);
+//        for (int i = start; i < start + length; ++i) {
+//            System.out.print(ch[i]);
+//        }
+        String tagValue = new String(ch, start, length);
 
         switch (currentTag) {
             case AIRPLANE_NAME:
@@ -87,7 +95,9 @@ public class Parser extends DefaultHandler {
                 aircraftBuilder.setType(AircraftType.defineValue(tagValue));
                 break;
             case PASSANGER_AMOUNT:
-                ((CivilAircraftBuilder)aircraftBuilder).setAircraftPassengerAmount(Integer.parseInt(tagValue));
+                if (tagValue != null && tagValue.trim().length() != 0) {
+                    ((CivilAircraftBuilder) aircraftBuilder).setAircraftPassengerAmount(Integer.parseInt(tagValue));
+                }
                 break;
             case CAPACITY:
                 ((CargoAircraftBuilder)aircraftBuilder).setAircraftCapacity(tagValue);
@@ -121,6 +131,6 @@ public class Parser extends DefaultHandler {
     @Override
     public void endDocument() throws SAXException {
         super.endDocument();
-        System.out.println("List of planes is downloaded!");
+        System.out.println("List of planes is downloaded!\n");
     }
 }

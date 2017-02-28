@@ -52,4 +52,13 @@ public class Aircraft {
         this.maxSpeed = maxSpeed;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder aircraftStringBuilder = new StringBuilder();
+        aircraftStringBuilder.append("Airplane Name: " + getName());
+        aircraftStringBuilder.append("\n");
+        aircraftStringBuilder.append("Airplane Type: " + getType());
+        aircraftStringBuilder.append("\n");
+        return  aircraftStringBuilder.toString();
+    }
 }

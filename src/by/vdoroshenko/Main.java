@@ -15,13 +15,15 @@ import java.util.List;
 
 public class Main {
 
+    Parser mainParser = new Parser();
+
     public static void main(String[] args) {
         Main theApp = new Main();
         theApp.runTheApp();
     }
 
     public void runTheApp() {
-
+        AirlineCompany airlineCompany = new AirlineCompany();
         List<Aircraft> aircrafts = new ArrayList<>();
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -30,31 +32,27 @@ public class Main {
         SAXParser parser;
 
         InputStream xmlData = null;
-        try
-        {
+        try {
             xmlData = new FileInputStream(new File("AircraftList.xml"));
 
             parser = factory.newSAXParser();
-            parser.parse(xmlData, new Parser());
+            parser.parse(xmlData, mainParser);
 
 
-        } catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (ParserConfigurationException e)
-        {
+        } catch (ParserConfigurationException e) {
             e.printStackTrace();
-        } catch (SAXException e)
-        {
+        } catch (SAXException e) {
             e.printStackTrace();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
             switch (showMenu()){
                 case 1:
-                    AirlineCompany.showAircraftList(aircrafts);
+                    mainParser.getAirlineCompany().showAircraftList();
+                    break;
                 case 2:
                 case 3:
                     System.out.println("See you later! Bye!");
@@ -72,4 +70,5 @@ public class Main {
         return ConsoleReader.readKeyFromConsole();
     }
 
-}
+    }
+

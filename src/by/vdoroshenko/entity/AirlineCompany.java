@@ -16,14 +16,14 @@ public class AirlineCompany {
 
     public void addAircraft(Aircraft aircraft) {
         aircraftList.add(aircraft);
-
     }
 
-    public static void showAircraftList(List<Aircraft> aircrafts){
-        for (Aircraft aircraft: aircrafts) {
-            System.out.println(aircraft);
+    public void showAircraftList(){
+
+        for (Aircraft aircraft: aircraftList){
+            System.out.println(aircraft.toString());
         }
 
     }
-
+    
 }
