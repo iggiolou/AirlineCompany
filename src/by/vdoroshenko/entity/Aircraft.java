@@ -5,7 +5,7 @@ import by.vdoroshenko.builder.AircraftBuilder;
 /**
  * Created by viktoriyadoroshenko on 2/27/17.
  */
-public class Aircraft {
+public class Aircraft{
 
     private int id;
     private String name;
@@ -61,4 +61,5 @@ public class Aircraft {
         aircraftStringBuilder.append("\n");
         return  aircraftStringBuilder.toString();
     }
+
 }
