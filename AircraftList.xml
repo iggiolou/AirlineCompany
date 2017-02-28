@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AirplaneInfo>
+
+	<Airplane id = "1">
+		<AirplaneName>Boeing 747</AirplaneName>
+		<AirplaneType>Widebody Aircraft</AirplaneType>
+		<PassangerAmount>500</PassangerAmount>
+		<Capacity>412,8 t</Capacity>
+		<Range>14205 km</Range>
+		<MaxSpeed>988 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "2">
+		<AirplaneName>Airbus A380</AirplaneName>
+		<AirplaneType>Widebody Aircraft</AirplaneType>
+		<PassangerAmount>525</PassangerAmount>
+		<Capacity>560 t</Capacity>
+		<Range>15200 km</Range>
+		<MaxSpeed>1020 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "3">
+		<AirplaneName>Boeing 777</AirplaneName>
+		<AirplaneType>Widebody Aircraft</AirplaneType>
+		<PassangerAmount>365</PassangerAmount>
+		<Capacity>315 t</Capacity>
+		<Range>14685 km</Range>
+		<MaxSpeed>945 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "4">
+		<AirplaneName>Airbus A320</AirplaneName>
+		<AirplaneType>Narrowbody Aircraft</AirplaneType>
+		<PassangerAmount>220</PassangerAmount>
+		<Capacity>93 t</Capacity>
+		<Range>5950 km</Range>
+		<MaxSpeed>840 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "5">
+		<AirplaneName>Boeing 737</AirplaneName>
+		<AirplaneType>Narrowbody Aircraft</AirplaneType>
+		<PassangerAmount>148</PassangerAmount>
+		<Capacity>70 t</Capacity>
+		<Range>6230 km</Range>
+		<MaxSpeed>852 hm/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "6">
+		<AirplaneName>Boeing 757</AirplaneName>
+		<AirplaneType>Narrowbody Aircraft</AirplaneType>
+		<PassangerAmount>280</PassangerAmount>
+		<Capacity>123 t</Capacity>
+		<Range>6421 km</Range>
+		<MaxSpeed>850 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "7">
+		<AirplaneName>Tupolev Tu164</AirplaneName>
+		<AirplaneType>Narrowbody Aircraft</AirplaneType>
+		<PassangerAmount>176</PassangerAmount>
+		<Capacity>104 t</Capacity>
+		<Range>3900 km</Range>
+		<MaxSpeed>950 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "8">
+		<AirplaneName>Saab 340</AirplaneName>
+		<AirplaneType>Regional</AirplaneType>
+		<PassangerAmount>37</PassangerAmount>
+		<Capacity>13 t</Capacity>
+		<Range>1735 km</Range>
+		<MaxSpeed>523 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "9">
+		<AirplaneName>Saab 2000</AirplaneName>
+		<AirplaneType>Regional</AirplaneType>
+		<PassangerAmount>50</PassangerAmount>
+		<Capacity>23 t</Capacity>
+		<Range>2035 km</Range>
+		<MaxSpeed>685 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "10">
+		<AirplaneName>Yakovlev Yak40</AirplaneName>
+		<AirplaneType>Regional</AirplaneType>
+		<PassangerAmount>40</PassangerAmount>
+		<Capacity>17 t</Capacity>
+		<Range>2500 km</Range>
+		<MaxSpeed>546 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "11">
+		<AirplaneName>Beechcraft King Air</AirplaneName>
+		<AirplaneType>Shorthoul	</AirplaneType>
+		<PassangerAmount>6</PassangerAmount>
+		<Capacity>4 t</Capacity>
+		<Range>2446 km</Range>
+		<MaxSpeed>500 km/h</MaxSpeed>
+	</Airplane>
+
+	<Airplane id = "12">
+		<AirplaneName>Cessna Citation Mustang</AirplaneName>
+		<AirplaneType>Shorthoul</AirplaneType>
+		<PassangerAmount>5</PassangerAmount>
+		<Capacity>4 t</Capacity>
+		<Range>2161 km</Range>
+		<MaxSpeed>630 km/h</MaxSpeed>
+	</Airplane>
+
+</AirplaneInfo>
