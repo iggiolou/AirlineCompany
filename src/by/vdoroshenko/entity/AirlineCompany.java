@@ -41,16 +41,13 @@ public class AirlineCompany {
 
     //TO DO
     public void searchAircraft(String searchValue) {
-        if (aircraftList.contains(searchValue)) {
+
             for (Aircraft aircraft : aircraftList) {
-                int nameSize = aircraft.getName().length();
-                if (searchValue.equalsIgnoreCase(aircraft.getName().substring(0, nameSize - 1))) {
+                if (searchValue.equalsIgnoreCase(aircraft.getName().toLowerCase())) {
                     System.out.println(aircraft.toString());
                 }
             }
-        } else {
-            System.out.println("Sorry, there is no planes with name " + searchValue + " in our company");
-        }
+
     }
 
 }

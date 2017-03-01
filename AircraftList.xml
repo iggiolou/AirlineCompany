@@ -9,7 +9,7 @@
 	</CargoAirplane>
 
 	<CivilAirplane id = "2">
-		<AirplaneName>Airbus A380</AirplaneName>
+		<AirplaneName>AirbusA380</AirplaneName>
 		<AirplaneType>Civil</AirplaneType>
 		<MaxSpeed>1020 km/h</MaxSpeed>
 		<PassangerAmount>525</PassangerAmount>
