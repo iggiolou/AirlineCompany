@@ -26,7 +26,6 @@ public class MilitaryAircraft extends Aircraft {
         this.aircraftGunType = aircraftGunType;
     }
 
-
     public MilitaryAircraft(AircraftBuilder aircraftBuilder) {
         super(aircraftBuilder);
         this.setAircraftGunType(getAircraftGunType());

@@ -2,7 +2,7 @@ package by.vdoroshenko;
 
 import by.vdoroshenko.entity.Aircraft;
 import by.vdoroshenko.entity.AirlineCompany;
-import by.vdoroshenko.utility.ConsoleReader;
+import by.vdoroshenko.utility.Menu;
 import by.vdoroshenko.utility.Parser;
 import org.xml.sax.SAXException;
 
@@ -12,11 +12,8 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
-
-    Parser parser = new Parser();
 
     public static void main(String[] args) {
         Main theApp = new Main();
@@ -24,6 +21,11 @@ public class Main {
     }
 
     public void runTheApp() {
+
+        Menu menu = new Menu();
+        menu.showMenu();
+
+        Parser parser = new Parser();
         AirlineCompany airlineCompany = new AirlineCompany();
         List<Aircraft> aircrafts = new ArrayList<>();
 
@@ -39,7 +41,6 @@ public class Main {
             saxParser = factory.newSAXParser();
             saxParser.parse(xmlData, parser);
 
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
@@ -50,32 +51,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        switch (showMenu()) {
-            case 1:
-                parser.getAirlineCompany().showAircraftList();
-                break;
-            case 2:
-                parser.getAirlineCompany().showSortedAircraftList();
-            case 3:
-                System.out.println("Enter Airplane name");
-                Scanner sc = new Scanner(System.in);
-                String searchValue = sc.next();
-                parser.getAirlineCompany().searchAircraft(searchValue);
-            case 4:
-                System.out.println("See you later! Bye!");
-                System.exit(0);
-        }
-
-    }
-
-    public int showMenu() {
-        System.out.println("Welcome to our Airline company!");
-        System.out.println("===========Menu================");
-        System.out.println("Press 1 to see all the planes");
-        System.out.println("Press 2 to sorted by name planes");
-        System.out.println("Press 3 to search for plane");
-        System.out.println("Press 4 to exit");
-        return ConsoleReader.readKeyFromConsole();
     }
 
 }

@@ -7,10 +7,8 @@ import by.vdoroshenko.builder.AircraftBuilder;
  */
 public class CargoAircraft extends Aircraft {
 
-
     private String aircraftCapacity;
     private String aircraftLength;
-
 
     public String getAircraftCapacity() {
         return aircraftCapacity;

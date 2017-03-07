@@ -4,36 +4,34 @@ import by.vdoroshenko.builder.AircraftBuilder;
 import by.vdoroshenko.builder.CargoAircraftBuilder;
 import by.vdoroshenko.builder.CivilAircraftBuilder;
 import by.vdoroshenko.builder.MilitaryAircraftBuilder;
-import by.vdoroshenko.entity.Aircraft;
 import by.vdoroshenko.entity.AircraftType;
 import by.vdoroshenko.entity.AirlineCompany;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by viktoriyadoroshenko on 2/27/17.
  */
 public class Parser extends DefaultHandler {
 
-    public static final String AIRPLANE_TYPE = "AirplaneType";
-    public static final String AIRPLANE_NAME = "AirplaneName";
-    public static final String MAX_SPEED = "MaxSpeed";
-    public static final String PASSANGER_AMOUNT = "PassangerAmount";
-    public static final String CAPACITY = "Capacity";
-    public static final String RANGE = "Range";
-    public static final String LENGTH = "Length";
-    public static final String MILITARY_TYPE = "MilitaryType";
-    public static final String GUN_TYPE = "GunType";
+    private static final String AIRPLANE_TYPE = "AirplaneType";
+    private static final String AIRPLANE_NAME = "AirplaneName";
+    private static final String MAX_SPEED = "MaxSpeed";
+    private static final String PASSANGER_AMOUNT = "PassangerAmount";
+    private static final String CAPACITY = "Capacity";
+    private static final String RANGE = "Range";
+    private static final String LENGTH = "Length";
+    private static final String MILITARY_TYPE = "MilitaryType";
+    private static final String GUN_TYPE = "GunType";
+    private static final String CARGO_AIRPLANE = "CargoAirplane";
+    private static final String CIVIL_AIRPLANE = "CivilAirplane";
+    private static final String MILITARY_AIRPLANE = "MilitaryAirplane";
+    private static final String AIRPLANE_INFO = "AirplaneInfo";
 
     private String currentTag;
 
-
-    AirlineCompany airlineCompany = new AirlineCompany();
-    List<Aircraft> aircraftList;
+    private AirlineCompany airlineCompany;
     private AircraftBuilder aircraftBuilder;
 
     public AirlineCompany getAirlineCompany() {
@@ -44,47 +42,41 @@ public class Parser extends DefaultHandler {
         this.airlineCompany = airlineCompany;
     }
 
-
     @Override
     public void startDocument() throws SAXException {
         super.startDocument();
-        aircraftList = new ArrayList<>();
+        airlineCompany = new AirlineCompany();
         System.out.println("Downloading list of planes...");
 
     }
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        //System.out.println("Tag: " + qName);
 
         switch (qName) {
-            case "CargoAirplane":
+            case CARGO_AIRPLANE:
                 aircraftBuilder = new CargoAircraftBuilder();
                 break;
-            case "CivilAirplane":
+            case CIVIL_AIRPLANE:
                 aircraftBuilder = new CivilAircraftBuilder();
                 break;
-            case "MilitaryAirplane":
+            case MILITARY_AIRPLANE:
                 aircraftBuilder = new MilitaryAircraftBuilder();
                 break;
-            case "AirplaneInfo":
+            case AIRPLANE_INFO:
                 break;
         }
-        //System.out.println(attributes.getValue(qName));
+
         if (attributes.getValue("id") != null) {
             aircraftBuilder.setId(Integer.parseInt(attributes.getValue("id")));
         }
         currentTag = qName;
         super.startElement(uri, localName, qName, attributes);
-
     }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         super.characters(ch, start, length);
-//        for (int i = start; i < start + length; ++i) {
-//            System.out.print(ch[i]);
-//        }
         String tagValue = new String(ch, start, length).trim();
         if (tagValue.length() > 0) {
             switch (currentTag) {
@@ -127,9 +119,9 @@ public class Parser extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         super.endElement(uri, localName, qName);
         switch (qName) {
-            case "CargoAirplane":
-            case "CivilAirplane":
-            case "MilitaryAirplane":
+            case CARGO_AIRPLANE:
+            case CIVIL_AIRPLANE:
+            case MILITARY_AIRPLANE:
                 airlineCompany.addAircraft(aircraftBuilder.buildAircraft());
                 break;
         }
@@ -140,7 +132,5 @@ public class Parser extends DefaultHandler {
         super.endDocument();
         System.out.println("List of planes is downloaded!\n");
     }
-
-
 
 }

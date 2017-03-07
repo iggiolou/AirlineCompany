@@ -26,10 +26,9 @@ public class CivilAircraftBuilder extends AircraftBuilder {
         this.aircraftRange = aircraftRange;
     }
 
-
     @Override
     public Aircraft buildAircraft() {
-    return new Aircraft(this);
+        return new Aircraft(this);
 
     }
 }

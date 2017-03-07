@@ -35,19 +35,14 @@ public class AirlineCompany {
         for (Aircraft aircraft : aircraftList) {
             System.out.println(aircraft.toString());
         }
-
     }
 
-
-    //TO DO
     public void searchAircraft(String searchValue) {
-
-            for (Aircraft aircraft : aircraftList) {
-                if (searchValue.equalsIgnoreCase(aircraft.getName().toLowerCase())) {
-                    System.out.println(aircraft.toString());
-                }
+        for (Aircraft aircraft : aircraftList) {
+            if (searchValue.equalsIgnoreCase(aircraft.getName().toLowerCase())) {
+                System.out.println(aircraft.toString());
             }
-
+        }
     }
 
 }

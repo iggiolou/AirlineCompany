@@ -5,20 +5,19 @@ import by.vdoroshenko.builder.AircraftBuilder;
 /**
  * Created by viktoriyadoroshenko on 2/27/17.
  */
-public class Aircraft{
+public class Aircraft {
 
     private int id;
     private String name;
     private AircraftType type;
     private String maxSpeed;
 
-    public Aircraft(AircraftBuilder aircraftBuilder){
+    public Aircraft(AircraftBuilder aircraftBuilder) {
         this.setId(aircraftBuilder.getId());
         this.setName(aircraftBuilder.getName());
         this.setType(aircraftBuilder.getType());
         this.setMaxSpeed(aircraftBuilder.getMaxSpeed());
     }
-
 
     public int getId() {
         return id;
@@ -59,7 +58,7 @@ public class Aircraft{
         aircraftStringBuilder.append("\n");
         aircraftStringBuilder.append("Airplane Type: " + getType());
         aircraftStringBuilder.append("\n");
-        return  aircraftStringBuilder.toString();
+        return aircraftStringBuilder.toString();
     }
 
 }

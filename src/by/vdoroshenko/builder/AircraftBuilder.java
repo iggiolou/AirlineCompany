@@ -8,7 +8,6 @@ import by.vdoroshenko.entity.AircraftType;
  */
 public class AircraftBuilder {
 
-
     private int id;
     private String name;
     private AircraftType type;
@@ -45,7 +44,6 @@ public class AircraftBuilder {
     public void setMaxSpeed(String maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
-
 
     public Aircraft buildAircraft() {
         return new Aircraft(this);

@@ -16,15 +16,14 @@ public enum AircraftType {
 
     }
 
-    public static AircraftType defineValue(String value){
-        for (AircraftType aircraftType: AircraftType.values()) {
-            if (aircraftType.value.equals(value)){
+    public static AircraftType defineValue(String value) {
+        for (AircraftType aircraftType : AircraftType.values()) {
+            if (aircraftType.value.equals(value)) {
                 return aircraftType;
             }
         }
         return null;
     }
-
 
 }
 

@@ -26,7 +26,6 @@ public class MilitaryAircraftBuilder extends AircraftBuilder {
         this.aircraftGunType = aircraftGunType;
     }
 
-
     @Override
     public Aircraft buildAircraft() {
         return new Aircraft(this);

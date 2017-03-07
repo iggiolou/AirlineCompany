@@ -17,6 +17,7 @@ public class ConsoleReader {
             System.out.println("Your choice is not a number. Please, try again");
             return readKeyFromConsole();
         }
+
         return key;
 
     }
